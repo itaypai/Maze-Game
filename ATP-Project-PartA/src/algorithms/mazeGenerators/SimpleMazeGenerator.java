@@ -50,6 +50,47 @@ public class SimpleMazeGenerator extends AMazeGenerator {
         //Set the start and goal positions to be zero.
         newMaze.setPosInMaze(newMaze.getStartPosition(),0);
         newMaze.setPosInMaze(newMaze.getGoalPosition(),0);
+
+        int startRow = newMaze.getStartPosition().getRowIndex();
+        int startCol = newMaze.getStartPosition().getColumnIndex();
+        Position currPosition  = new Position(startRow, startCol);
+        this.ensurePossiblePath(newMaze, currPosition);
         return newMaze;
     }
+
+    /**
+     * @param newSimpleMaze
+     * @param currPosition
+     */
+    private void ensurePossiblePath(Maze newSimpleMaze, Position currPosition)
+    {
+        Random random = new Random();
+        int randNum;
+
+        while(currPosition.getRowIndex() != newSimpleMaze.getGoalPosition().getRowIndex() ||
+            currPosition.getColumnIndex() != newSimpleMaze.getGoalPosition().getColumnIndex())
+        {
+            randNum = random.nextInt(3);
+            //Ensure the move right.
+            if (randNum == 0){
+                if (currPosition.getColumnIndex() < newSimpleMaze.getGoalPosition().getColumnIndex()){
+                    currPosition.setColumnIndex(currPosition.getColumnIndex() + 1);
+                }
+            }
+            //Ensure the move up.
+            else if (randNum == 1){
+                if (currPosition.getRowIndex() > newSimpleMaze.getGoalPosition().getRowIndex()){
+                    currPosition.setRowIndex(currPosition.getRowIndex() - 1);
+                }
+            }
+            //Ensure the move down.
+            else{
+                if (currPosition.getRowIndex() < newSimpleMaze.getGoalPosition().getRowIndex()){
+                    currPosition.setRowIndex(currPosition.getRowIndex() + 1);
+                }
+            }
+            newSimpleMaze.setPosInMaze(currPosition, 0);
+        }
+    }
+
 }

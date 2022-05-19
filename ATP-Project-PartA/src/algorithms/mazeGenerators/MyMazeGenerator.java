@@ -103,6 +103,14 @@ public class MyMazeGenerator extends AMazeGenerator {
         while (mazePositionsStack.isEmpty() != true)
         {
             currPosition = mazePositionsStack.pop();
+            if (mazeToGenerate.getNumOfCols() % 2 == 0 && currPosition.getColumnIndex() == mazeToGenerate.getNumOfCols() - 2){
+                Position goalPosition = new Position(currPosition.getRowIndex(), currPosition.getColumnIndex() + 1);
+                mazeToGenerate.setPosInMaze(goalPosition, 0);
+                mazeToGenerate.setGoalPosition(goalPosition);
+            }
+            if (mazeToGenerate.getNumOfCols() % 2 == 1 && currPosition.getColumnIndex() == mazeToGenerate.getNumOfCols() - 1){
+                mazeToGenerate.setGoalPosition(currPosition);
+            }
             currNeighborsList = this.getPositionNeighbors(mazeToGenerate, currPosition);
             currUnvisitedNeighbors = this.getUnvisitedNeighbors(isVisited, currNeighborsList);
             if (currUnvisitedNeighbors != null){
