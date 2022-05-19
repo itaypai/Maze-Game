@@ -98,8 +98,48 @@ public class Maze {
         return this.mazeArray[0].length;
     }
 
+    /**
+     *
+     */
     public void print()
     {
+        int startRow = this.startPosition.getRowIndex();
+        int startCol = this.startPosition.getColumnIndex();
+        int goalRow =  this.goalPosition.getRowIndex();
+        int goalCol = this.goalPosition.getColumnIndex();
+        int row,col;
+        String valueToPrint;
+        System.out.print("{{");
 
+        for (row=0; row < this.getNumOfRows(); row++)
+        {
+            if (row > 0){
+                System.out.print(" {");
+            }
+            for (col=0; col < this.getNumOfCols(); col++)
+            {
+                if (row == startRow && col == startCol){
+                    valueToPrint = " S";
+                }
+                else if (row == goalRow && col == goalCol){
+                    valueToPrint = " E";
+                }
+                else if (this.mazeArray[row][col] == 0){
+                    valueToPrint = " 0";
+                }
+                else {
+                    valueToPrint = " 1";
+                }
+                if (col < this.getNumOfCols() - 1) {
+                    valueToPrint += ",";
+                }
+                System.out.print(valueToPrint);
+            }
+            if (row < this.getNumOfRows() - 1) {
+                System.out.println("},");
+            }
+        }
+        System.out.println("}}");
     }
+
 }

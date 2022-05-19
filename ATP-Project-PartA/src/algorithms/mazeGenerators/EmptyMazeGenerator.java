@@ -14,8 +14,8 @@ public class EmptyMazeGenerator extends AMazeGenerator {
     public Maze generate(int numOfRows, int numOfCols) {
         //Create a maze with default size if some of the parameters are incorrect.
         if(numOfRows <=0 || numOfCols <= 0 || (numOfRows == 1 && numOfCols == 1)) {
-            numOfRows = 2;
-            numOfCols = 2;
+            numOfRows = 10;
+            numOfCols = 10;
         }
         //Initialize a 2D array of zeros with the size of the empty maze.
         int [][] emptyMaze = new int[numOfRows][numOfCols];

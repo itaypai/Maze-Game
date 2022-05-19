@@ -9,18 +9,18 @@ public class SimpleMazeGenerator extends AMazeGenerator {
     public Maze generate(int numOfRows, int numOfCols) {
         //Create a maze with default size if some of the parameters are incorrect.
         if(numOfRows <=0 || numOfCols <= 0 || (numOfRows == 1 && numOfCols == 1)) {
-            numOfRows = 2;
-            numOfCols = 2;
+            numOfRows = 10;
+            numOfCols = 10;
         }
         int [][] mazeArr = new int[numOfRows][numOfCols];
-        int randomStartRow = (numOfRows - 1) * (int)Math.random();
-        int randomGoalRow = (numOfRows - 1) * (int)Math.random();
+        int randomStartRow = (int) ((numOfRows - 1) * Math.random());
+        int randomGoalRow = (int) ((numOfRows - 1) * Math.random());
         //If the start and goal positions are equal choose randomly again until different numbers are achieved.
         if (numOfCols ==1 && randomStartRow == randomGoalRow){
             while (randomStartRow == randomGoalRow)
             {
-                randomStartRow = (numOfRows - 1) * (int)Math.random();
-                randomGoalRow = (numOfRows - 1) * (int)Math.random();
+                randomStartRow = (int) ((numOfRows - 1) * Math.random());
+                randomGoalRow = (int) ((numOfRows - 1) * Math.random());
             }
         }
         //Set the starting position of the maze on the left wall.
@@ -33,7 +33,7 @@ public class SimpleMazeGenerator extends AMazeGenerator {
         {
            for (int col=0; col < numOfCols; col++)
            {
-                randomPositionValue = r.nextInt(3);
+                randomPositionValue = r.nextInt(5);
                 if (randomPositionValue % 3 == 0){
                     mazeArr[row][col] = 0;
                 }
