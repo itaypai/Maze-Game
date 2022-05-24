@@ -10,7 +10,7 @@ public interface IMazeGenerator {
      * @param numOfCols, The amount of columns in the maze that created.
      * @return Maze, the maze created according to the algorithm of the class that implements the interface.
      */
-    public Maze generate(int numOfRows, int numOfCols);
+     Maze generate(int numOfRows, int numOfCols);
 
     /**
      * @param numOfRows, The amount of rows in the maze that created.
@@ -18,5 +18,5 @@ public interface IMazeGenerator {
      * @return long that represents the time in milliseconds it took to create the maze
      * with the sizes given to the function.
      */
-    public long measureAlgorithmTimeMillis(int numOfRows, int numOfCols);
+     long measureAlgorithmTimeMillis(int numOfRows, int numOfCols);
 }
