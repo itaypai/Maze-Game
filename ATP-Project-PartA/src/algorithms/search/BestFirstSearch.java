@@ -11,6 +11,6 @@ public class BestFirstSearch extends ASearchingAlgorithm {
     @Override
     public Solution solve(ISearchable searchableDomain)
     {
-        ;
+        return null;
     }
 }

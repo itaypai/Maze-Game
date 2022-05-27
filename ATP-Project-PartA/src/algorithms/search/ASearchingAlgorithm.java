@@ -1,14 +1,23 @@
 package algorithms.search;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 
 /**
  *
  */
 public abstract class ASearchingAlgorithm implements ISearchingAlgorithm {
-
     private int numOfNodesEvaluated;
+    protected HashSet<AState> visitedStates;
 
+    /**
+     *
+     */
+    public ASearchingAlgorithm()
+    {
+        visitedStates = new HashSet<AState>();
+        numOfNodesEvaluated = 0;
+    }
     /**
      * @return
      */
@@ -16,6 +25,14 @@ public abstract class ASearchingAlgorithm implements ISearchingAlgorithm {
     public int getNumberOfNodesEvaluated()
     {
         return this.numOfNodesEvaluated;
+    }
+
+    /**
+     *
+     */
+    protected void increaseNumOfNodesEvaluated()
+    {
+       this.numOfNodesEvaluated = this.numOfNodesEvaluated + 1;
     }
 
     /**
