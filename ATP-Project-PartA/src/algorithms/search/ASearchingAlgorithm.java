@@ -35,13 +35,14 @@ public abstract class ASearchingAlgorithm implements ISearchingAlgorithm {
        this.numOfNodesEvaluated = this.numOfNodesEvaluated + 1;
     }
 
+
     /**
-     * @param searchable
+     * @param goalState
      * @return
      */
-    protected ArrayList<AState> createSolutionPath(ISearchable searchable)
+    protected ArrayList<AState> createSolutionPath(AState goalState)
     {
-        AState currState = searchable.getGoalState();
+        AState currState = goalState;
         ArrayList<AState> searchableSolutionPath = new ArrayList<>();
         while (currState != null)
         {

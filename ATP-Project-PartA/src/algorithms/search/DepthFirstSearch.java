@@ -32,7 +32,7 @@ public class DepthFirstSearch extends ASearchingAlgorithm {
             if (currState.equals(goalState)){
                 break;
             }
-            ArrayList<AState> possibleNeighbors = searchableDomain.getAllPossibleStates(currState);
+            ArrayList<AState> possibleNeighbors = searchableDomain.getAllPossibleStates(currState, false);
             this.increaseNumOfNodesEvaluated();
             for (AState neighbor: possibleNeighbors)
             {
@@ -43,7 +43,7 @@ public class DepthFirstSearch extends ASearchingAlgorithm {
                 }
             }
         }
-        ArrayList<AState> solutionPath = this.createSolutionPath(searchableDomain);
+        ArrayList<AState> solutionPath = this.createSolutionPath(currState);
         Solution searchableSolution = new Solution(solutionPath);
         return searchableSolution;
     }

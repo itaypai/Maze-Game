@@ -1,23 +1,21 @@
 package algorithms.search;
 
-import java.util.AbstractQueue;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 /**
  *
  */
 public class BreadthFirstSearch extends ASearchingAlgorithm {
-    protected Queue<AState> bfsQueue;
-
+    protected PriorityQueue<AState> bfsQueue;
+    protected boolean useCost;
     /**
      *
      */
     public BreadthFirstSearch()
     {
         super();
-        bfsQueue = new LinkedList<>();
+        this.useCost = false;
+        bfsQueue = new PriorityQueue<>();
     }
 
 
@@ -48,7 +46,7 @@ public class BreadthFirstSearch extends ASearchingAlgorithm {
             if (currState.equals(goalState)){
                 break;
             }
-            ArrayList<AState> possibleNeighbors = searchableDomain.getAllPossibleStates(currState);
+            ArrayList<AState> possibleNeighbors = searchableDomain.getAllPossibleStates(currState, useCost);
             this.increaseNumOfNodesEvaluated();
             for (AState neighbor: possibleNeighbors)
             {
@@ -59,7 +57,7 @@ public class BreadthFirstSearch extends ASearchingAlgorithm {
                 }
             }
         }
-        ArrayList<AState> solutionPath = this.createSolutionPath(searchableDomain);
+        ArrayList<AState> solutionPath = this.createSolutionPath(currState);
         Solution searchableSolution = new Solution(solutionPath);
         return searchableSolution;
     }

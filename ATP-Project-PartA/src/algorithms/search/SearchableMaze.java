@@ -45,8 +45,9 @@ public class SearchableMaze implements ISearchable {
      * @return
      */
     @Override
-    public ArrayList<AState> getAllPossibleStates(AState state) {
+    public ArrayList<AState> getAllPossibleStates(AState state, boolean useCost) {
         MazeState stateInMaze = (MazeState) state;
+        int currCost = state.getCostOfArrival();
         ArrayList<AState> possibleNeighbors = new ArrayList<>();
         int stateRow = stateInMaze.getMazeState().getRowIndex();
         int stateCol = stateInMaze.getMazeState().getColumnIndex();
@@ -63,7 +64,13 @@ public class SearchableMaze implements ISearchable {
         if (stateRow > 0 && this.maze.getMazeArray()[stateRow - 1][stateCol] == 0) {
             upperNeighbor = true;
             Position upPos = new Position(stateRow - 1, stateCol);
-            MazeState upState = new MazeState(upPos, 10);
+            MazeState upState;
+            if (useCost) {
+                upState = new MazeState(upPos, currCost + 10);
+            }
+            else{
+                upState = new MazeState(upPos, 10);
+            }
             possibleNeighbors.add(upState);
         }
 
@@ -72,7 +79,13 @@ public class SearchableMaze implements ISearchable {
             if ((upperNeighbor == true || (this.maze.getMazeArray()[stateRow][stateCol + 1] == 0)) &&
                     this.maze.getMazeArray()[stateRow - 1][stateCol + 1] == 0) {
                 Position upRightPos = new Position(stateRow - 1, stateCol + 1);
-                MazeState upRightState = new MazeState(upRightPos, 15);
+                MazeState upRightState;
+                if (useCost){
+                    upRightState = new MazeState(upRightPos, currCost + 15);
+                }
+                else {
+                    upRightState = new MazeState(upRightPos, 10);
+                }
                 possibleNeighbors.add(upRightState);
             }
         }
@@ -81,7 +94,13 @@ public class SearchableMaze implements ISearchable {
         if (stateCol < this.maze.getNumOfCols() - 1 && this.maze.getMazeArray()[stateRow][stateCol + 1] == 0) {
             rightNeighbor = true;
             Position rightPos = new Position(stateRow, stateCol + 1);
-            MazeState rightState = new MazeState(rightPos, 10);
+            MazeState rightState;
+            if (useCost){
+                rightState = new MazeState(rightPos, currCost + 10);
+            }
+            else{
+                rightState = new MazeState(rightPos, 10);
+            }
             possibleNeighbors.add(rightState);
         }
 
@@ -90,7 +109,13 @@ public class SearchableMaze implements ISearchable {
             if ((rightNeighbor == true || (this.maze.getMazeArray()[stateRow + 1][stateCol] == 0)) &&
                     this.maze.getMazeArray()[stateRow + 1][stateCol + 1] == 0) {
                 Position downRightPos = new Position(stateRow + 1, stateCol + 1);
-                MazeState downRightState = new MazeState(downRightPos, 15);
+                MazeState downRightState;
+                if (useCost) {
+                    downRightState = new MazeState(downRightPos, currCost + 15);
+                }
+                else{
+                    downRightState = new MazeState(downRightPos, 10);
+                }
                 possibleNeighbors.add(downRightState);
             }
         }
@@ -99,7 +124,13 @@ public class SearchableMaze implements ISearchable {
         if (stateRow < this.maze.getNumOfRows() - 1 && this.maze.getMazeArray()[stateRow + 1][stateCol] == 0) {
             bottomNeighbor = true;
             Position bottomPos = new Position(stateRow + 1, stateCol);
-            MazeState downState = new MazeState(bottomPos, 10);
+            MazeState downState;
+            if (useCost){
+                downState = new MazeState(bottomPos, currCost + 10);
+            }
+            else{
+                downState = new MazeState(bottomPos, 10);
+            }
             possibleNeighbors.add(downState);
         }
 
@@ -108,7 +139,13 @@ public class SearchableMaze implements ISearchable {
             if (((this.maze.getMazeArray()[stateRow][stateCol - 1] == 0) || bottomNeighbor == true) &&
                     this.maze.getMazeArray()[stateRow + 1][stateCol - 1] == 0) {
                 Position downLeftPos = new Position(stateRow + 1, stateCol - 1);
-                MazeState downLeftState = new MazeState(downLeftPos, 15);
+                MazeState downLeftState;
+                if (useCost) {
+                    downLeftState = new MazeState(downLeftPos, currCost + 15);
+                }
+                else{
+                    downLeftState = new MazeState(downLeftPos, 10);
+                }
                 possibleNeighbors.add(downLeftState);
             }
         }
@@ -117,7 +154,13 @@ public class SearchableMaze implements ISearchable {
         if (stateCol > 0 && this.maze.getMazeArray()[stateRow][stateCol - 1] == 0) {
             leftNeighbor = true;
             Position leftPos = new Position(stateRow, stateCol - 1);
-            MazeState leftState = new MazeState(leftPos, 10);
+            MazeState leftState;
+            if (useCost){
+                leftState = new MazeState(leftPos, currCost + 10);
+            }
+            else{
+                leftState = new MazeState(leftPos, 10);
+            }
             possibleNeighbors.add(leftState);
         }
 
@@ -125,7 +168,13 @@ public class SearchableMaze implements ISearchable {
         if (stateRow > 0 && stateCol > 0) {
             if ((upperNeighbor == true || leftNeighbor == true) && this.maze.getMazeArray()[stateRow - 1][stateCol - 1] == 0) {
                 Position upLeftPos = new Position(stateRow - 1, stateCol - 1);
-                MazeState upLeftState = new MazeState(upLeftPos, 15);
+                MazeState upLeftState;
+                if (useCost){
+                    upLeftState = new MazeState(upLeftPos, currCost + 15);
+                }
+                else{
+                    upLeftState = new MazeState(upLeftPos, 10);
+                }
                 possibleNeighbors.add(upLeftState);
             }
         }

@@ -19,6 +19,6 @@ public interface ISearchable {
     /**
      * @return
      */
-    ArrayList<AState> getAllPossibleStates(AState state);
+    ArrayList<AState> getAllPossibleStates(AState state, boolean useCost);
 
 }

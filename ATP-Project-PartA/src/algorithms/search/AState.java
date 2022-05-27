@@ -3,7 +3,7 @@ package algorithms.search;
 /**
  *
  */
-public class AState {
+public abstract class AState implements Comparable<AState>{
     private int costOfArrival;
     private AState fatherState;
 
@@ -49,5 +49,8 @@ public class AState {
         return this.fatherState;
     }
 
-
+    public int compareTo(AState state)
+    {
+        return Integer.compare(this.getCostOfArrival(),state.getCostOfArrival());
+    }
 }
