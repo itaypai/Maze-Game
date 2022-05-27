@@ -39,17 +39,17 @@ public class BreadthFirstSearch extends ASearchingAlgorithm {
     {
         AState currState = searchableDomain.getStartState();
         AState goalState = searchableDomain.getGoalState();
-        boolean finishSearch = false;
         bfsQueue.add(currState);
         visitedStates.add(currState);
 
-        while (!bfsQueue.isEmpty() && finishSearch != true)
+        while (!bfsQueue.isEmpty())
         {
-            this.increaseNumOfNodesEvaluated();
             currState = bfsQueue.poll();
-            finishSearch = currState.equals(goalState);
-
+            if (currState.equals(goalState)){
+                break;
+            }
             ArrayList<AState> possibleNeighbors = searchableDomain.getAllPossibleStates(currState);
+            this.increaseNumOfNodesEvaluated();
             for (AState neighbor: possibleNeighbors)
             {
                 if (!visitedStates.contains(neighbor)){
