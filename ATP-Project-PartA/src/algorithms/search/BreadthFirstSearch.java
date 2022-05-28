@@ -3,13 +3,15 @@ package algorithms.search;
 import java.util.*;
 
 /**
- *
+ * BreadthFirstSearch class extends the abstract class ASearchingAlgorithm.
+ * The class implements solve according to the breadth first search algorithm.
  */
 public class BreadthFirstSearch extends ASearchingAlgorithm {
     protected PriorityQueue<AState> bfsQueue;
     protected boolean useCost;
     /**
-     *
+     * Constructor
+     * Refers to the priority queue as a regular queue with no difference between the steps.
      */
     public BreadthFirstSearch()
     {
@@ -20,7 +22,7 @@ public class BreadthFirstSearch extends ASearchingAlgorithm {
 
 
     /**
-     * @return
+     * @return the name of the search algorithm.
      */
     @Override
     public String getName()
@@ -30,7 +32,7 @@ public class BreadthFirstSearch extends ASearchingAlgorithm {
 
     /**
      * @param searchableDomain
-     * @return
+     * @return a solution to the problem according to bfs algorithm.
      */
     @Override
     public Solution solve(ISearchable searchableDomain)

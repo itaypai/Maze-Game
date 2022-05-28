@@ -6,12 +6,14 @@ import algorithms.mazeGenerators.Position;
 import java.util.ArrayList;
 
 /**
- *
+ * SearchableMaze is class that implements ISearchable.
+ * Adapter to maze problem.
  */
 public class SearchableMaze implements ISearchable {
     Maze maze;
 
     /**
+     * Constructor
      * @param searchable
      */
     public SearchableMaze(Maze searchable)
@@ -20,7 +22,7 @@ public class SearchableMaze implements ISearchable {
     }
 
     /**
-     * @return
+     * @return the start state of the maze.
      */
     @Override
     public AState getStartState()
@@ -31,7 +33,7 @@ public class SearchableMaze implements ISearchable {
     }
 
     /**
-     * @return
+     * @return the goal state of the maze.
      */
     @Override
     public AState getGoalState()
@@ -42,7 +44,7 @@ public class SearchableMaze implements ISearchable {
     }
 
     /**
-     * @return
+     * @return list of all possible neighbors states that can be reached from curr state.
      */
     @Override
     public ArrayList<AState> getAllPossibleStates(AState state, boolean useCost) {

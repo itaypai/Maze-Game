@@ -1,13 +1,16 @@
 package algorithms.search;
 
 /**
- *
+ * AState is an abstract class represents state in a searching problem.
+ * Cost of arrival is the cost for reaching this state.
+ * Father state is the state we came from to this state.
  */
 public abstract class AState implements Comparable<AState>{
     private int costOfArrival;
     private AState fatherState;
 
     /**
+     * Constructor
      * @param cost
      */
     public AState(int cost)
@@ -17,6 +20,7 @@ public abstract class AState implements Comparable<AState>{
     }
 
     /**
+     * Set the cost
      * @param costOfArrival
      */
     public void setCostOfArrival(int costOfArrival)
@@ -26,6 +30,7 @@ public abstract class AState implements Comparable<AState>{
     }
 
     /**
+     * Set father state.
      * @param fatherState
      */
     public void setFatherState(AState fatherState)
@@ -34,7 +39,7 @@ public abstract class AState implements Comparable<AState>{
     }
 
     /**
-     * @return
+     * @return the cost.
      */
     public int getCostOfArrival()
     {
@@ -42,7 +47,7 @@ public abstract class AState implements Comparable<AState>{
     }
 
     /**
-     * @return
+     * @return the father state of this
      */
     public AState getFatherState()
     {

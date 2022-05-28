@@ -3,12 +3,14 @@ package algorithms.search;
 import java.util.ArrayList;
 
 /**
- *
+ * Solution is a class that represents the solution to the problem.
+ * A path made up of states from the start to till the goal that together represent a solution.
  */
 public class Solution {
     private ArrayList<AState> solutionPath;
 
     /**
+     * Constructor
      * @param solPath
      */
     public Solution(ArrayList<AState> solPath)
@@ -18,7 +20,7 @@ public class Solution {
     }
 
     /**
-     * @return
+     * @return solution path list.
      */
     public ArrayList<AState> getSolutionPath()
 

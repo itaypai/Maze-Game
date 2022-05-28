@@ -3,6 +3,10 @@ package algorithms.search;
 import java.util.ArrayList;
 import java.util.Stack;
 
+/**
+ * BreadthFirstSearch class extends the abstract class ASearchingAlgorithm.
+ * The class implements solve according to the depth first search algorithm.
+ */
 public class DepthFirstSearch extends ASearchingAlgorithm {
     private Stack<AState> dfsStack;
 
@@ -18,6 +22,10 @@ public class DepthFirstSearch extends ASearchingAlgorithm {
         return "DepthFirstSearch";
     }
 
+    /**
+     * @param searchableDomain
+     * @return a solution to the problem according to dfs algorithm.
+     */
     @Override
     public Solution solve(ISearchable searchableDomain)
     {

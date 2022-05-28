@@ -4,14 +4,15 @@ import java.util.ArrayList;
 import java.util.HashSet;
 
 /**
- *
+ * ASearchingAlgorithm is an abstract class that implements SearchingAlgorithm interface.
+ * The abstract class is inherited by the sub-class which are the various search algorithms.
  */
 public abstract class ASearchingAlgorithm implements ISearchingAlgorithm {
     private int numOfNodesEvaluated;
     protected HashSet<AState> visitedStates;
 
     /**
-     *
+     * Constructor
      */
     public ASearchingAlgorithm()
     {
@@ -19,7 +20,7 @@ public abstract class ASearchingAlgorithm implements ISearchingAlgorithm {
         numOfNodesEvaluated = 0;
     }
     /**
-     * @return
+     * @return the number of evaluated nodes.
      */
     @Override
     public int getNumberOfNodesEvaluated()
@@ -28,7 +29,7 @@ public abstract class ASearchingAlgorithm implements ISearchingAlgorithm {
     }
 
     /**
-     *
+     * Add 1 to the num of evaluated nodes.
      */
     protected void increaseNumOfNodesEvaluated()
     {
@@ -37,6 +38,7 @@ public abstract class ASearchingAlgorithm implements ISearchingAlgorithm {
 
 
     /**
+     * Runs from a certain state on the father field until it reaches null and thus creates the solution path.
      * @param goalState
      * @return
      */

@@ -4,12 +4,13 @@ import algorithms.mazeGenerators.Position;
 import java.util.Objects;
 
 /**
- *
+ * Object adapter between AState that represents state in any problem and Position that represents state in Maze problem.
  */
 public class MazeState extends AState{
     private Position mazeState;
 
     /**
+     * Constructor
      * @param state
      * @param cost
      */
@@ -20,6 +21,7 @@ public class MazeState extends AState{
     }
 
     /**
+     * Sets maze state.
      * @param mazeState
      */
     public void setMazeState(Position mazeState) {
@@ -27,7 +29,7 @@ public class MazeState extends AState{
     }
 
     /**
-     * @return
+     * @return position that represents maze state.
      */
     public Position getMazeState()
     {

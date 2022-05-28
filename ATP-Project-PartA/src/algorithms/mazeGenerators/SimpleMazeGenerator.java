@@ -2,7 +2,8 @@ package algorithms.mazeGenerators;
 import java.util.Random;
 
 /**
- *
+ * SimpleMazeGenerator is a maze generator that extends AMazeGenerator.
+ * It implements generate in a simple and random way and not according to any algorithm.
  */
 public class SimpleMazeGenerator extends AMazeGenerator {
     @Override
@@ -59,6 +60,8 @@ public class SimpleMazeGenerator extends AMazeGenerator {
     }
 
     /**
+     * A function that creates and ensures a legal path to the goal position.
+     * In order not to allow a situation where the maze is without a possible solution
      * @param newSimpleMaze
      * @param currPosition
      */

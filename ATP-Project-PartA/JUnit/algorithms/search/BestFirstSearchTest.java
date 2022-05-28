@@ -5,20 +5,33 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * JUnit test class that tests the functions of best first search class and the functionality of the algorithm.
+ */
+
 class BestFirstSearchTest {
     private BestFirstSearch bestFirstSearchForTest = new BestFirstSearch();
 
+    /**
+     * Test for getName function.
+     */
     @Test
     void getName()
     {
         assertEquals("BestFirstSearch", bestFirstSearchForTest.getName());
     }
 
+    /**
+     * Test to the case of receiving null in the input.
+     */
     @Test
-    void nullInputTest() throws Exception{
+    void nullInputTest() {
         assertTrue(bestFirstSearchForTest.solve(null) == null);
     }
 
+    /**
+     * Test for getNumberOfNodesEvaluated function.
+     */
     @Test
     public void getNumberOfNodesEvaluatedFirst()
     {
@@ -27,6 +40,9 @@ class BestFirstSearchTest {
         assertEquals(0, bestFirstSearchForTest.getNumberOfNodesEvaluated());
     }
 
+    /**
+     * Another test for getNumberOfNodesEvaluated function.
+     */
     @Test
     public void getNumberOfNodesEvaluatedSecond()
     {
@@ -38,6 +54,9 @@ class BestFirstSearchTest {
         assertEquals(1, bestFirstSearchForTest.getNumberOfNodesEvaluated());
     }
 
+    /**
+     * Tests the time it takes to the algorithm to solve the problem and find a solution to the maze.
+     */
     @Test
     public void solve()
     {

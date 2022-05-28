@@ -56,9 +56,10 @@ public class MyMazeGenerator extends AMazeGenerator {
     }
 
     /**
-     * @param isVisited
-     * @param currPositionList
-     * @return
+     * A function that returns the neighbors of the current position that the algorithm has not visited yet.
+     * @param isVisited, an array that represents which cells we have already visited.
+     * @param currPositionList, list with the neighbors of the curr position.
+     * @return, returns a list of the neighbors who have not yet visited them out of all the neighbors of the position.
      */
     private ArrayList<Position> getUnvisitedNeighbors(boolean[][] isVisited, ArrayList<Position> currPositionList)
     {
@@ -78,7 +79,8 @@ public class MyMazeGenerator extends AMazeGenerator {
     }
 
     /**
-     * @param mazeToGenerate
+     * The function goes over the maze and breaks the walls according to the iterative algorithm of dfs.
+     * @param mazeToGenerate, a maze that is initialized so that all its positions are walls and equals to 1.
      */
     private void mazeDepthFirstSearch(Maze mazeToGenerate)
     {
@@ -138,9 +140,9 @@ public class MyMazeGenerator extends AMazeGenerator {
     }
 
     /**
-     * @param mazeToGenerate
-     * @param pos
-     * @return
+     * @param mazeToGenerate the maze that we want to generate.
+     * @param pos any position in the maze.
+     * @return ArrayList of positions with the possible neighbors of pos.
      */
     private ArrayList<Position> getPositionNeighbors(Maze mazeToGenerate, Position pos)
     {
