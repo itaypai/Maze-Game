@@ -35,6 +35,9 @@ public class BreadthFirstSearch extends ASearchingAlgorithm {
     @Override
     public Solution solve(ISearchable searchableDomain)
     {
+        if (searchableDomain == null){
+            return null;
+        }
         AState currState = searchableDomain.getStartState();
         AState goalState = searchableDomain.getGoalState();
         bfsQueue.add(currState);
