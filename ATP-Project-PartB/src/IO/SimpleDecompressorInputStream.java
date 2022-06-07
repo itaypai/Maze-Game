@@ -3,10 +3,20 @@ package IO;
 import java.io.IOException;
 import java.io.InputStream;
 
+/**
+ * The class SimpleDecompressorInputStream extends InputStream.
+ * This class adds the functionality of decompressing of the input according to the method
+ * of simple compression we have implemented in the class SimpleCompressor.
+ */
 public class SimpleDecompressorInputStream extends InputStream {
     InputStream in;
 
+    /**
+     * Constructor
+     * @param in
+     */
     public SimpleDecompressorInputStream(InputStream in)
+
     {
         this.in = in;
     }
@@ -23,7 +33,7 @@ public class SimpleDecompressorInputStream extends InputStream {
     /**
      * Extract the information of the input through the input stream into array b according
      * to the method of compression.
-     * @param b, we "inflate" the array with the extracted information.
+     * @param b, we "inflate" the array with the extracted details.
      * @return
      * @throws IOException
      */

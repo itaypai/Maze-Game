@@ -36,7 +36,8 @@ public class SimpleCompressorOutputStream extends OutputStream {
      * @throws IOException
      */
     @Override
-    public void write(byte[] b) throws IOException {
+    public void write(byte[] b) throws IOException
+    {
         int sequenceCount = 0;
         for (int i=0; i < b.length; i++)
         {
