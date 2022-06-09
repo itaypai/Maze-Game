@@ -63,7 +63,7 @@ public class MyCompressorOutputStream extends OutputStream {
      * @param currIndex, the index from which the current eight begins.
      * @return the single byte after compressing.
      */
-    private byte fromBytesToByte(byte[] b, int currIndex)
+    private int fromBytesToByte(byte[] b, int currIndex)
     {
         int compressedNum = 0;
         int index = 0;
@@ -84,7 +84,7 @@ public class MyCompressorOutputStream extends OutputStream {
                 index++;
             }
         }
-        return (byte)compressedNum;
+        return compressedNum;
     }
 }
 

@@ -55,12 +55,12 @@ public class Maze {
         int startPosRow = this.fromByteToInt(mazeByteArray[4], mazeByteArray[5]);
         int startPosCol = this.fromByteToInt(mazeByteArray[6], mazeByteArray[7]);
         Position newStartPos = new Position(startPosRow, startPosCol);
-        this.setStartPosition(newStartPos);
+        this.startPosition = newStartPos;
         //Set Goal position
         int goalPosRow = this.fromByteToInt(mazeByteArray[8], mazeByteArray[9]);
         int goalPosCol = this.fromByteToInt(mazeByteArray[10], mazeByteArray[11]);
         Position newGoalPos = new Position(goalPosRow, goalPosCol);
-        this.setGoalPosition(newGoalPos);
+        this.goalPosition = newGoalPos;
     }
 
     /**

@@ -68,5 +68,6 @@ public class SimpleCompressorOutputStream extends OutputStream {
                 }
             }
         }
+        this.write(sequenceCount);
     }
 }
