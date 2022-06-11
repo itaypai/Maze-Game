@@ -21,7 +21,6 @@ public class ServerStrategyGenerateMaze implements IServerStrategy{
     {
         try{
             ObjectInputStream fromClient = new ObjectInputStream(inFromClient);
-
             OutputStream compressedData = new MyCompressorOutputStream(outToClient);
 
             int[] dimensionsSize = (int[]) fromClient.readObject();

@@ -31,7 +31,7 @@ public class Server {
         this.listeningIntervalMS = listeningIntervalMS;
         this.strategy = strategy;
         //Initialize new thread pool with the requested number of threads.
-        int numOfThreads = Configurations.getInstance().function of size to add in Configurations();
+        int numOfThreads = Configurations.getInstance().getThreadPoolSize();
         this.threadPool = Executors.newFixedThreadPool(numOfThreads);
     }
 
