@@ -1,11 +1,13 @@
 package algorithms.search;
 
+import java.io.Serializable;
+
 /**
  * AState is an abstract class represents state in a searching problem.
  * Cost of arrival is the cost for reaching this state.
  * Father state is the state we came from to this state.
  */
-public abstract class AState implements Comparable<AState>{
+public abstract class AState implements Comparable<AState>, Serializable {
     private int costOfArrival;
     private AState fatherState;
 

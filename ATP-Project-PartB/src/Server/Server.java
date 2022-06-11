@@ -15,9 +15,10 @@ public class Server {
     private int port;
     private int listeningIntervalMS;
     private IServerStrategy strategy;
-    private volatile boolean stop;
-    //Thread pool
+    // Thread pool
     private ExecutorService threadPool;
+    private volatile boolean stop=false;
+
 
     /**
      * Constructor
@@ -25,8 +26,7 @@ public class Server {
      * @param listeningIntervalMS
      * @param strategy
      */
-    public Server(int port, int listeningIntervalMS, IServerStrategy strategy)
-    {
+    public Server(int port, int listeningIntervalMS, IServerStrategy strategy) {
         this.port = port;
         this.listeningIntervalMS = listeningIntervalMS;
         this.strategy = strategy;
@@ -39,41 +39,38 @@ public class Server {
      * Start the threads work.
      * Gets the startServer task.
      */
-    public void start()
-    {
-        Thread newThread = new Thread(()->{this.startServer();});
+    public void start(){
+        Thread newThread = new Thread(() ->{runServer();});
         newThread.start();
     }
 
     /**
      * A method called in the start function.
-     * Its purpose is to start the work of the servers
+     * Its purpose is to start the work of the servers.
      */
-    private void startServer()
-    {
+    private void runServer(){
         try {
             ServerSocket serverSocket = new ServerSocket(port);
             serverSocket.setSoTimeout(listeningIntervalMS);
-
-            while (!stop)
-            {
+            while (!stop) {
                 try {
                     Socket clientSocket = serverSocket.accept();
 
-                    // Insert the new task into the thread pool
-                    threadPool.submit(() -> {handleClient(clientSocket);
+                    // Insert the new task into the thread pool:
+                    threadPool.submit(() -> {
+                        handleClient(clientSocket);
                     });
+
                 }
                 catch (SocketTimeoutException e){
-                    e.printStackTrace();
+                    //System.out.println(e.getMessage());
                 }
             }
             serverSocket.close();
             // do not allow any new tasks into the thread pool, and also interrupts all running threads
             // (do not terminate the threads, so if they do not handle interrupts properly, they could never stop...)
             threadPool.shutdownNow();
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -82,22 +79,21 @@ public class Server {
      * This function handle with the requests of the clients.
      * @param clientSocket, creates the communication with the client.
      */
-    private void handleClient(Socket clientSocket)
-    {
+    private void handleClient(Socket clientSocket) {
         try {
             strategy.applyStrategy(clientSocket.getInputStream(), clientSocket.getOutputStream());
+            //System.out.println("Done handling client: " + clientSocket.toString());
             clientSocket.close();
         }
         catch (IOException e){
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 
     /**
      * Change the boolean to true.
      */
-    public void stop()
-    {
+    public void stop(){
         stop = true;
     }
 }

@@ -1,5 +1,6 @@
 package algorithms.mazeGenerators;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -10,7 +11,7 @@ import java.util.Arrays;
  * The purpose of the maze is to find a path of a solution that starts at the starting pos and ends at the goal pos.
  * The maze is represented by the two-dimensional array so that the number 1 represents a wall and the number 0 represents an empty space.
  */
-public class Maze {
+public class Maze implements Serializable {
     private Position startPosition;
     private Position goalPosition;
     private int[][] mazeArray;

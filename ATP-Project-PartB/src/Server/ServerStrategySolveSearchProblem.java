@@ -40,15 +40,13 @@ public class ServerStrategySolveSearchProblem implements IServerStrategy {
             // Initialize a new file with the path given.
             File currNewFile = new File(currFilePath);
             Solution clientMazeSolution;
-            FileInputStream newFileInputStream = new FileInputStream(currNewFile);
-            ObjectInputStream clientMazeSolInput = new ObjectInputStream(newFileInputStream);
 
             // Check if there is already a solution file for the given maze.
             // If so do not need to solve again, but just pull it out and return to the client.
             if(currNewFile.exists()) {
+                ObjectInputStream clientMazeSolInput = new ObjectInputStream(new FileInputStream(currNewFile));
                 ArrayList<AState> solution = (ArrayList<AState>) clientMazeSolInput.readObject();
                 clientMazeSolution = new Solution(solution);
-                newFileInputStream.close();
                 clientMazeSolInput.close();
             }
             // A new maze that has not been solved before.
