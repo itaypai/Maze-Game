@@ -70,6 +70,7 @@ public class MyDecompressorInputStream extends InputStream {
                     }
                     count += 8;
                 }
+                //Pop from the last eight the amount of elements left to get all the values of the states.
                 else{
                     for (int i=0; i < (size - count); i++)
                     {
@@ -84,8 +85,10 @@ public class MyDecompressorInputStream extends InputStream {
     }
 
     /**
-     * @param compressedNum
-     * @return
+     * A method that converts each byte represented by a number in the compressed array into 8 bytes that
+     * represent the contents of the states.
+     * @param compressedNum, the compressed number we want to extract and turn into 8 bytes.
+     * @return, returns an eight-size stack that contains the eight bytes that represent the number received in the input.
      */
     private Stack<Byte> fromNumToBytes(int compressedNum)
     {
@@ -97,6 +100,7 @@ public class MyDecompressorInputStream extends InputStream {
             compressedNum = compressedNum / 2;
         }
         currStackSize = res.size();
+        //If the number is represented by less than 8 bits add zeros to reach size 8.
         for (int i=0; i < (8 - currStackSize); i++)
         {
             res.push((byte)0);
