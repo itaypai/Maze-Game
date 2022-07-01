@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f6f59c3-f8f6-4284-931f-56f0213c9735" name="Changes" comment="Part C - StartWindow">
-      <change beforePath="$PROJECT_DIR$/src/main/java/NewGameSettingsView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/newGameSettingsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/newGameSettingsView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/MazeDisplayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/MazeDisplayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/gameSettingsWindow.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/newGameSettingsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/newGameSettingsView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/secondWindow.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/secondWindow.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/newGameSettingsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/newGameSettingsView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +100,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656669158931</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Part C - StartWindow">
+      <created>1656669356554</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1656669356554</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

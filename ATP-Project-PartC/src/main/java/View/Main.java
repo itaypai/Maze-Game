@@ -1,7 +1,5 @@
 package View;
 
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
@@ -11,11 +9,8 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 
 import java.io.IOException;
-import java.time.LocalDateTime;
-import java.time.temporal.ChronoUnit;
 
 import java.io.File;
 
@@ -40,7 +35,8 @@ public class Main extends Application {
             MyViewController.myMazeMedia.setMute(true);
             Parent secondRoot = null;
             try {
-                secondRoot = fxmlLoader.load(getClass().getResource("/newGameSettingsView.fxml"));
+                FXMLLoader fxmlLoader2 = new FXMLLoader(getClass().getResource("/newGameSettingsView.fxml"));
+                secondRoot = fxmlLoader2.load();
 
             } catch (IOException e) {
                 e.printStackTrace();
@@ -48,6 +44,7 @@ public class Main extends Application {
 
             Scene mySecondScene = new Scene(secondRoot, 1000, 800);
             primaryStage.setScene(mySecondScene);
+            primaryStage.setTitle("The Maze");
             Screen screen = Screen.getPrimary();
             Rectangle2D bounds = screen.getVisualBounds();
             primaryStage.setX(bounds.getMinX());
