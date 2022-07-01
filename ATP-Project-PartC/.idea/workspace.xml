@@ -4,18 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f6f59c3-f8f6-4284-931f-56f0213c9735" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_media_15_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_media_win_15_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/NewGameSettingsView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ATP-Project-PartC.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartC.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/MyView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/MyView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/MyViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/MyViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ViewModel/MyViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewModel/MyViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" />
+    <list default="true" id="0f6f59c3-f8f6-4284-931f-56f0213c9735" name="Changes" comment="Part C - StartWindow">
+      <change beforePath="$PROJECT_DIR$/src/main/java/NewGameSettingsView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/newGameSettingsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/newGameSettingsView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,6 +88,14 @@
       <option name="presentableId" value="Default" />
       <updated>1656450239254</updated>
     </task>
+    <task id="LOCAL-00001" summary="Part C - StartWindow">
+      <created>1656669158931</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1656669158931</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -109,6 +108,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Part C - StartWindow" />
+    <option name="LAST_COMMIT_MESSAGE" value="Part C - StartWindow" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ATP_Project_PartC$Main.ic" NAME="Main Coverage Results" MODIFIED="1656531815764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
