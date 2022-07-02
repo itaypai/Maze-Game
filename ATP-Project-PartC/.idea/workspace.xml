@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f6f59c3-f8f6-4284-931f-56f0213c9735" name="Changes" comment="Images">
+    <list default="true" id="0f6f59c3-f8f6-4284-931f-56f0213c9735" name="Changes" comment="AppInformation and MovementDirection">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/MazeDisplayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/MazeDisplayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/MazeDisplayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/MazeDisplayer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/gameSettingsWindow.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/secondWindow.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/secondWindow.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/IModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/IModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/AppInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/AppInformation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/MyViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/MyViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ViewModel/MyViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewModel/MyViewModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +48,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/ATP2021_Lab12" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -119,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656713104617</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="AppInformation and MovementDirection">
+      <created>1656724464832</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1656724464832</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -137,7 +146,8 @@
     <MESSAGE value="Part C - StartWindow" />
     <MESSAGE value="Images and MazeDisplayer" />
     <MESSAGE value="Images" />
-    <option name="LAST_COMMIT_MESSAGE" value="Images" />
+    <MESSAGE value="AppInformation and MovementDirection" />
+    <option name="LAST_COMMIT_MESSAGE" value="AppInformation and MovementDirection" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ATP_Project_PartC$Main.ic" NAME="Main Coverage Results" MODIFIED="1656531815764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

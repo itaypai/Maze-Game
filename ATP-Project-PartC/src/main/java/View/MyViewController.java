@@ -6,6 +6,7 @@ import javafx.beans.property.StringProperty;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
@@ -25,11 +26,14 @@ public class MyViewController implements IView, Initializable, Observer {
     private TextField mazeRowsTextField;
     private TextField mazeColsTextField;
     private MazeDisplayer mazeDisplayer;
-    private Label characterRow;
-    private Label characterCol;
+    private Label playerRow;
+    private Label playerCol;
     private StringProperty updateCharacterRow = new SimpleStringProperty();
     private StringProperty updateCharacterCol = new SimpleStringProperty();
     public static MediaPlayer myMazeMedia;
+    public MenuItem newGame;
+    public MenuItem loadGame;
+    public MenuItem saveGame;
 
     public void setViewModel(MyViewModel viewModel)
     {
