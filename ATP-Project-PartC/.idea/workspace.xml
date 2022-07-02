@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f6f59c3-f8f6-4284-931f-56f0213c9735" name="Changes" comment="AppInformation and MovementDirection">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+    <list default="true" id="0f6f59c3-f8f6-4284-931f-56f0213c9735" name="Changes" comment="IModel and Model&#10;MyViewModel">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/IModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/IModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/AppInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/AppInformation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/MyViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/MyViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ViewModel/MyViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewModel/MyViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/MyModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/MyModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656724464832</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="IModel and Model&#10;MyViewModel">
+      <created>1656773924117</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1656773924117</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -147,7 +150,8 @@
     <MESSAGE value="Images and MazeDisplayer" />
     <MESSAGE value="Images" />
     <MESSAGE value="AppInformation and MovementDirection" />
-    <option name="LAST_COMMIT_MESSAGE" value="AppInformation and MovementDirection" />
+    <MESSAGE value="IModel and Model&#10;MyViewModel" />
+    <option name="LAST_COMMIT_MESSAGE" value="IModel and Model&#10;MyViewModel" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ATP_Project_PartC$Main.ic" NAME="Main Coverage Results" MODIFIED="1656531815764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
