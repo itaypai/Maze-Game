@@ -9,9 +9,11 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
+import javafx.util.Pair;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.Queue;
 
 public class MazeDisplayer extends Canvas{
     private int[][] maze;
@@ -23,6 +25,7 @@ public class MazeDisplayer extends Canvas{
     StringProperty imageFileNameWall = new SimpleStringProperty();
     StringProperty imageFileNamePlayer = new SimpleStringProperty();
     StringProperty imageFileNameGoalPos = new SimpleStringProperty();
+    StringProperty imageFileNameSolutionPath = new SimpleStringProperty();
     private int goalPosRow;
     private int goalPosCol;
 
@@ -34,13 +37,15 @@ public class MazeDisplayer extends Canvas{
         return this.playerCol;
     }
 
-    public void setPlayerPosition(int newRow, int newCol) {
+    public void setPlayerPosition(int newRow, int newCol)
+    {
         this.playerRow = newRow;
         this.playerCol = newCol;
         this.draw();
     }
 
-    public void setSolution(Solution solution) {
+    public void setSolution(Solution solution)
+    {
         this.solution = solution;
         this.draw();
     }
@@ -69,6 +74,14 @@ public class MazeDisplayer extends Canvas{
         this.imageFileNameGoalPos.set(imageFileNameGoal);
     }
 
+    public String getImageFileNameSolutionPath() {
+        return this.imageFileNameSolutionPath.get();
+    }
+
+    public void setImageFileNameSolutionPath(String imageFileNameSolutionPath) {
+        this.imageFileNameSolutionPath.set(imageFileNameSolutionPath);
+    }
+
     public void setGoalPosRow(int goalPosRow)
     {
         this.goalPosRow = goalPosRow;
@@ -95,10 +108,11 @@ public class MazeDisplayer extends Canvas{
     {
         Image goalPositionImage = null;
         try{
-            goalPositionImage = new Image(this.getImageFileNameGoalPos());
+            goalPositionImage = new Image(new FileInputStream(this.getImageFileNameGoalPos()));
         }
-        catch (Exception e){
+        catch (FileNotFoundException e) {
             System.out.println("There is no image of goal position");
+        }
         double xAxis = this.goalPosRow * cellWidth;
         double yAxis = this.goalPosCol * cellHeight;
 
@@ -142,15 +156,49 @@ public class MazeDisplayer extends Canvas{
             graphicsContext.clearRect(0, 0, canvasWidth, canvasHeight);
 
             drawMazeWalls(graphicsContext, cellHeight, cellWidth, rows, cols);
-            if(solution != null) {
-                drawMazeSolution(graphicsContext, cellHeight, cellWidth);
-            }
+            drawMazeGoalPosition(graphicsContext, cellHeight, cellWidth);
             drawPlayerInMaze(graphicsContext, cellHeight, cellWidth);
         }
     }
 
-    private void drawMazeSolution(GraphicsContext graphicsContext, double cellHeight, double cellWidth) {
+    private void drawMazeSolution(GraphicsContext graphicsContext, Queue<Integer[]> solutionPath)
+    {
+        double xAxis;
+        double yAxis;
+        Integer posFirstValue;
+        Integer posSecondValue;
+        double canvasHeight = getHeight();
+        double canvasWidth = getWidth();
+        int numOfRows = maze.length;
+        int numOfCols = maze[0].length;
+        double cellHeight = canvasHeight / numOfRows;
+        double cellWidth = canvasWidth / numOfCols;
 
+        Image solutionPathImage = null;
+        try{
+            solutionPathImage = new Image(new FileInputStream(this.getImageFileNameSolutionPath()));
+        }
+        catch (FileNotFoundException e){
+            System.out.println("There is no solution path image");
+        }
+
+        for (Integer[] position: solutionPath)
+        {
+            posFirstValue = position[0];
+            posSecondValue = position[1];
+            if (this.playerRow == posFirstValue && this.playerCol == posSecondValue){
+                continue;
+            }
+            else{
+                xAxis = posFirstValue * cellWidth;
+                yAxis = posSecondValue * cellHeight;
+                graphicsContext.drawImage(solutionPathImage, xAxis, yAxis, cellWidth, cellHeight);
+            }
+        }
+
+        this.drawPlayerInMaze(graphicsContext, cellHeight, cellWidth);
+        this.drawMazeWalls(graphicsContext, cellHeight, cellWidth, numOfRows, numOfCols);
+        this.drawMazeGoalPosition(graphicsContext, cellHeight, cellWidth);
     }
 
     private void drawMazeWalls(GraphicsContext graphicsContext, double cellHeight, double cellWidth, int rows, int cols)
@@ -159,9 +207,9 @@ public class MazeDisplayer extends Canvas{
         double xAxis = 0;
         double yAxis = 0;
         try{
-            mazeWallImage = new Image(this.getImageFileNameWall());
+            mazeWallImage = new Image(new FileInputStream(this.getImageFileNameWall()));
         }
-        catch (Exception e){
+        catch (FileNotFoundException e){
             System.out.println("There is no image of maze wall");
         }
 
@@ -170,7 +218,7 @@ public class MazeDisplayer extends Canvas{
         {
             for(int j=0; j < cols; j++)
             {
-                //If the cell is equal to 1 it should be wall
+                //If the cell is equal to 1 the cell should be a wall
                 if (this.maze[i][j] == 1)
                 {
                     xAxis = j * cellWidth;
@@ -187,21 +235,27 @@ public class MazeDisplayer extends Canvas{
         }
     }
 
-    private void drawPlayerInMaze(GraphicsContext graphicsContext, double cellHeight, double cellWidth) {
-        double x = getPlayerCol() * cellWidth;
-        double y = getPlayerRow() * cellHeight;
+    private void drawPlayerInMaze(GraphicsContext graphicsContext, double cellHeight, double cellWidth)
+    {
+        Image playerImage = null;
+        double xAxis = getPlayerCol() * cellWidth;
+        double yAxis = getPlayerRow() * cellHeight;
         graphicsContext.setFill(Color.GREEN);
 
-        Image playerImage = null;
-        try {
-            playerImage = new Image(new FileInputStream(getImageFileNamePlayer()));
-        } catch (FileNotFoundException e) {
-            System.out.println("There is no player image file");
+        try
+        {
+            playerImage = new Image(new FileInputStream(this.getImageFileNamePlayer()));
         }
-        if(playerImage == null)
-            graphicsContext.fillRect(x, y, cellWidth, cellHeight);
-        else
-            graphicsContext.drawImage(playerImage, x, y, cellWidth, cellHeight);
+        catch (FileNotFoundException e)
+        {
+            System.out.println("There is no player image");
+        }
+        if(playerImage == null) {
+            graphicsContext.fillRect(xAxis, yAxis, cellWidth, cellHeight);
+        }
+        else{
+            graphicsContext.drawImage(playerImage, xAxis, yAxis, cellWidth, cellHeight);
+        }
     }
 
 }
