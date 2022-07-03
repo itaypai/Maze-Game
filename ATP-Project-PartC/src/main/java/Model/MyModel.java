@@ -16,8 +16,7 @@ import java.net.UnknownHostException;
 import java.security.spec.ECField;
 import java.sql.ClientInfoStatus;
 import java.util.*;
-import java.util.logging.LogManager;
-import java.util.logging.Logger;
+
 
 import javafx.stage.FileChooser;
 import org.apache.logging.log4j.LogManager;

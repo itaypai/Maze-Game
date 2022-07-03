@@ -13,7 +13,7 @@ import java.util.Properties;
  */
 public class Configurations {
     private static Configurations instanceOfConfigurations = null;
-    static Configurations getInstance()
+    public static Configurations getInstance()
     {
         if (instanceOfConfigurations == null) {
             instanceOfConfigurations = new Configurations();

@@ -1,9 +1,10 @@
 package View;
 //import Model.MazeGenerator;
 import ViewModel.MyViewModel;
+import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
@@ -15,13 +16,15 @@ import javafx.fxml.Initializable;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
+import java.awt.event.ActionEvent;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.net.URL;
 import java.util.Observable;
 import java.util.Observer;
 import java.util.ResourceBundle;
 
-public class MyViewController implements IView, Initializable, Observer {
+public class MyViewController extends AView implements IView, Initializable, Observer {
     private MyViewModel viewModel;
     private TextField mazeRowsTextField;
     private TextField mazeColsTextField;
@@ -39,6 +42,11 @@ public class MyViewController implements IView, Initializable, Observer {
     {
         this.viewModel = viewModel;
         this.viewModel.addObserver(this);
+    }
+
+    @Override
+    public void exitProgram(ActionEvent event) {
+        Platform.exit();
     }
 
     public void setUpdateCharacterRow(String newCharacterRow)
@@ -82,11 +90,32 @@ public class MyViewController implements IView, Initializable, Observer {
     }
 
 
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
+
+    public void aboutAlgorithmsMenu(ActionEvent event)
+    {
+        AppInformation.aboutAlgorithms();
+    }
+
+
+    public void aboutMeMenu(ActionEvent event)
+    {
+        AppInformation.aboutMe();
+    }
+
+    public void storyBehindMenu(ActionEvent event)
+    {
+        AppInformation.storyBehind();
+    }
+
+    public void instructionsMenu(ActionEvent event)
+    {
+        AppInformation.gameInstructions();
+    }
+
 
     @Override
     public void update(Observable o, Object arg) {
