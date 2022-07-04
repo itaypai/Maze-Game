@@ -4,22 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f6f59c3-f8f6-4284-931f-56f0213c9735" name="Changes" comment="MyModel">
-      <change beforePath="$PROJECT_DIR$/../ATP-Project-PartB/newTmpMaze.maze" beforeDir="false" afterPath="$PROJECT_DIR$/../ATP-Project-PartB/newTmpMaze.maze" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ATP-Project-PartB/out/artifacts/ATP_Project_PartB_jar/ATP-Project-PartB.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../ATP-Project-PartB/out/artifacts/ATP_Project_PartB_jar/ATP-Project-PartB.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ATP-Project-PartB/out/production/ATP-Project-PartB/Server/Configurations.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ATP-Project-PartB/out/production/ATP-Project-PartB/Server/Configurations.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ATP-Project-PartB/src/Server/Configurations.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ATP-Project-PartB/src/Server/Configurations.java" afterDir="false" />
+    <list default="true" id="0f6f59c3-f8f6-4284-931f-56f0213c9735" name="Changes" comment="AView">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ATP-Project-PartC.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ATP-Project-PartC.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ATPProjectJAR.jar" beforeDir="false" afterPath="$PROJECT_DIR$/ATPProjectJAR.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/MyModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/MyModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/AView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/AView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/View/IView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/IView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/View/MyViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/MyViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/StartMazeWindow.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/newGameSettingsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/newGameSettingsView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/StartMazeWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/StartMazeWindow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/SecondWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/SecondWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/newGameSettingsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/newGameSettingsView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/secondWindow.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/secondWindowBackground.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/secondWindowBackground.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/StartMazeWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/StartMazeWindow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/newGameSettingsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/newGameSettingsView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/secondWindow.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656799078556</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="AView">
+      <created>1656871912400</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1656871912400</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -176,7 +179,8 @@
     <MESSAGE value="AppInformation and MovementDirection" />
     <MESSAGE value="IModel and Model&#10;MyViewModel" />
     <MESSAGE value="MyModel" />
-    <option name="LAST_COMMIT_MESSAGE" value="MyModel" />
+    <MESSAGE value="AView" />
+    <option name="LAST_COMMIT_MESSAGE" value="AView" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ATP_Project_PartC$Main.ic" NAME="Main Coverage Results" MODIFIED="1656531815764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

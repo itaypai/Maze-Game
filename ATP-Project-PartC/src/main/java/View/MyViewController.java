@@ -5,6 +5,7 @@ import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
@@ -16,7 +17,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
-import java.awt.event.ActionEvent;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.net.URL;
@@ -31,8 +31,12 @@ public class MyViewController extends AView implements IView, Initializable, Obs
     private MazeDisplayer mazeDisplayer;
     private Label playerRow;
     private Label playerCol;
+    public static int rows;
+    public static int cols;
     private StringProperty updateCharacterRow = new SimpleStringProperty();
     private StringProperty updateCharacterCol = new SimpleStringProperty();
+    public static String characterPath;
+    public static File loadedFile;
     public static MediaPlayer myMazeMedia;
     public MenuItem newGame;
     public MenuItem loadGame;
@@ -95,26 +99,6 @@ public class MyViewController extends AView implements IView, Initializable, Obs
 
     }
 
-    public void aboutAlgorithmsMenu(ActionEvent event)
-    {
-        AppInformation.aboutAlgorithms();
-    }
-
-
-    public void aboutMeMenu(ActionEvent event)
-    {
-        AppInformation.aboutMe();
-    }
-
-    public void storyBehindMenu(ActionEvent event)
-    {
-        AppInformation.storyBehind();
-    }
-
-    public void instructionsMenu(ActionEvent event)
-    {
-        AppInformation.gameInstructions();
-    }
 
 
     @Override

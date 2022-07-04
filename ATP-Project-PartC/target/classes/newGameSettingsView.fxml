@@ -1,15 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/18.0.1"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="View.newGameSettingsView"
-            prefHeight="400.0" prefWidth="600.0"
-            stylesheets="@secondWindow.css">
-    <!--prefHeight="400.0" prefWidth="600.0" stylesheets="@startWindowImage.css" xmlns="http://javafx.com/javafx/18.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.StartMazeWindow"-->
+<AnchorPane opacity="0.8" prefHeight="509.0" prefWidth="698.0" stylesheets="@secondWindowBackground.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.SecondWindow">
+   <children>
+      <Label alignment="TOP_CENTER" layoutX="180.0" layoutY="41.0" prefHeight="36.0" prefWidth="337.0" text="A few settings before we start playing" textAlignment="CENTER" textOverrun="CLIP" underline="true">
+         <font>
+            <Font name="Playbill" size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="237.0" layoutY="106.0" prefHeight="30.0" prefWidth="229.0" text="Please select the sizes of your maze" textAlignment="CENTER" textOverrun="CLIP">
+         <font>
+            <Font name="Playbill" size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="299.0" layoutY="148.0" prefHeight="26.0" prefWidth="42.0" text="Rows:">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="278.0" layoutY="183.0" text="Columns:">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="rowTextField" layoutX="358.0" layoutY="148.0" prefHeight="26.0" prefWidth="72.0" />
+      <TextField fx:id="colTextField" layoutX="358.0" layoutY="179.0" prefHeight="26.0" prefWidth="72.0" />
+      <Label fx:id="rowColInputError" layoutX="219.0" layoutY="215.0" prefHeight="22.0" prefWidth="243.0" textFill="#d71b1d">
+         <font>
+            <Font name="Cambria Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="256.0" layoutY="241.0" prefHeight="28.0" prefWidth="167.0" text="Please select the character">
+         <font>
+            <Font name="Playbill" size="26.0" />
+         </font>
+      </Label>
+      <CheckBox fx:id="happyEfiSelect" layoutX="253.0" layoutY="279.0" mnemonicParsing="false" onAction="#selectionHappyEfi" selected="true" text="Happy Efrat" />
+      <CheckBox fx:id="angryEfiSelect" layoutX="358.0" layoutY="280.0" mnemonicParsing="false" onAction="#selectionAngryEfi" text="Angry Efrat" />
+      <ImageView fx:id="happyCharacter" fitHeight="139.0" fitWidth="116.0" layoutX="238.0" layoutY="302.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/happyEfi.png" />
+         </image></ImageView>
+      <ImageView fx:id="angryCharacter" fitHeight="132.0" fitWidth="158.0" layoutX="352.0" layoutY="304.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/angryEfi.png" />
+         </image></ImageView>
+      <Button fx:id="newGameButton" layoutX="277.0" layoutY="451.0" mnemonicParsing="false" onAction="#startAccordingConfig" prefHeight="49.0" prefWidth="142.0" text="New Game">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <MenuBar prefHeight="26.0" prefWidth="698.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="menuLoad" mnemonicParsing="false" onAction="#loadMaze" text="Load" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Options">
+            <items>
+              <MenuItem fx:id="mazeGenerator" mnemonicParsing="false" onAction="#setGenerator" text="Choose Maze Generator" />
+                  <MenuItem fx:id="solvingAlg" mnemonicParsing="false" onAction="#setSolvingAlgorithm" text="Choose Solving Algorithm" />
+                  <MenuItem fx:id="threadsNum" mnemonicParsing="false" onAction="#setThreadsNum" text="Choose Number Of Threads" />
+                  <MenuItem fx:id="properties" mnemonicParsing="false" onAction="#showConfigurations" text="Properties" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem fx:id="instructions" mnemonicParsing="false" onAction="#gameInstructions" text="Instructions" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="About">
+               <items>
+                  <MenuItem fx:id="aboutMe" mnemonicParsing="false" onAction="#aboutMe" text="Me" />
+                  <MenuItem fx:id="aboutStory" mnemonicParsing="false" onAction="#storyBehind" text="The Story" />
+                  <MenuItem fx:id="aboutAlgotirhms" mnemonicParsing="false" onAction="#aboutAlgorithms" text="Algorithms" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Exit">
+               <items>
+                  <MenuItem fx:id="exitGame" mnemonicParsing="false" onAction="#exitProgram" text="Exit Game" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </children>
 </AnchorPane>

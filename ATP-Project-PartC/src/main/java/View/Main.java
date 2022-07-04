@@ -21,6 +21,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/StartMazeWindow.fxml"));
         Parent root = fxmlLoader.load();
+        //Parent root = FXMLLoader.load(getClass().getResource("/StartMazeWindow.fxml"));
         primaryStage.setTitle("The Maze");
         primaryStage.setScene(new Scene(root, 1000, 800));
         primaryStage.show();
@@ -35,6 +36,7 @@ public class Main extends Application {
             MyViewController.myMazeMedia.setMute(true);
             Parent secondRoot = null;
             try {
+                //secondRoot = FXMLLoader.load(getClass().getResource("/newGameSettingsView.fxml"));
                 FXMLLoader fxmlLoader2 = new FXMLLoader(getClass().getResource("/newGameSettingsView.fxml"));
                 secondRoot = fxmlLoader2.load();
 

@@ -4,8 +4,7 @@ import Server.Configurations;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 
-import java.awt.*;
-import java.awt.event.ActionEvent;
+import javafx.event.ActionEvent;
 import java.io.*;
 import java.net.URL;
 import java.util.Properties;
@@ -63,6 +62,7 @@ public abstract class AView implements IView, Initializable {
         dialogPane.setBackground(background);
 
         alert.showAndWait();
+
         //option - add image view
 
 
@@ -101,6 +101,28 @@ public abstract class AView implements IView, Initializable {
 
         return fileToRet;
     }
+
+    public void aboutAlgorithmsMenu(ActionEvent event)
+    {
+        AppInformation.aboutAlgorithms();
+    }
+
+
+    public void aboutMeMenu(ActionEvent event)
+    {
+        AppInformation.aboutMe();
+    }
+
+    public void storyBehindMenu(ActionEvent event)
+    {
+        AppInformation.storyBehind();
+    }
+
+    public void instructionsMenu(ActionEvent event)
+    {
+        AppInformation.gameInstructions();
+    }
+
 }
 
 

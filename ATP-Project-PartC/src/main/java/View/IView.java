@@ -1,8 +1,9 @@
 package View;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
+import javafx.event.ActionEvent;
 
 public interface IView {
     void exitProgram(ActionEvent event);
+
 }
