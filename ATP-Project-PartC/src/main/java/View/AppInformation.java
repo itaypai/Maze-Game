@@ -31,7 +31,7 @@ public class AppInformation {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setContentText("Hi everybody," + "\n" +
             "My name is Itay and my girlfriend Efrat has a message for you:" + "\n" +
-            "I have a dream to get married and I need your help to get through the maze and get the ring I'm waiting for.");
+            "\"I have a dream to get married and I need your help to get through the maze and get the ring I'm waiting for.\"");
         alert.show();
     }
 
@@ -48,9 +48,9 @@ public class AppInformation {
     {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setContentText("Maze Generators Algorithms:" + "\n" +
-                "EmptyMazeGenerator - creates an empty maze without walls and randomly selects the start and goal positions" + "\n" +
-                "SimpleMazeGenerator - creates a simple random maze with a path from the starting position to the goal position" + "\n" +
-                "MyMazeAlgorithm - Uses a DFS algorithm to create the maze" + "\n" + "\n" +
+                "EmptyMazeGenerator - creates an empty maze without walls and randomly selects the start and goal positions." + "\n" +
+                "SimpleMazeGenerator - creates a simple random maze with a path from the starting position to the goal position." + "\n" +
+                "MyMazeAlgorithm - Uses a DFS algorithm to create the maze." + "\n" +
                 "Solving Algorithms:" + "\n" +
                 "In order to solve the maze, one of the following three search algorithms is used -" + "\n" +
                 "Breadth First Search / Depth First Search / Best First Search.");

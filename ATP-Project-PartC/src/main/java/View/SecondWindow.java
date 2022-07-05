@@ -17,21 +17,21 @@ import java.util.ResourceBundle;
 
 public class SecondWindow extends AView{
     @FXML
-    CheckBox selectHappyEfi;
+    CheckBox happyEfiSelect;
     @FXML
-    CheckBox selectAngryEfi;
+    CheckBox angryEfiSelect;
 
     @FXML
-    TextField textFieldRow;
+    TextField rowTextField;
     @FXML
-    TextField textFieldCol;
+    TextField colTextField;
     @FXML
     Label rowColInputError;
 
-    String characterPath = "";
+    String characterPath = "./src/main/resources/images/happyEfi.png";
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        textFieldRow.textProperty().addListener(new ChangeListener<String>() {
+        rowTextField.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String s, String s2) {
                 rowColInputError.setText("");
@@ -39,7 +39,7 @@ public class SecondWindow extends AView{
             }
         });
 
-        textFieldCol.textProperty().addListener(new ChangeListener<String>() {
+        colTextField.textProperty().addListener(new ChangeListener<String>() {
             public void changed(ObservableValue<? extends String> observableValue, String s, String s2) {
                 rowColInputError.setText("");
 
@@ -48,17 +48,17 @@ public class SecondWindow extends AView{
     }
 
     public void selectionHappyEfi(ActionEvent event) {
-        if (this.selectAngryEfi.isSelected())
-            this.selectAngryEfi.setSelected(false);
-        selectHappyEfi.setSelected(true);
-        characterPath = "./resources/images/happyEfi.png";
+        if (this.angryEfiSelect.isSelected())
+            this.angryEfiSelect.setSelected(false);
+        happyEfiSelect.setSelected(true);
+        characterPath = "./src/main/resources/images/happyEfi.png";
     }
 
     public void selectionAngryEfi(ActionEvent event) {
-        if (this.selectHappyEfi.isSelected())
-            this.selectHappyEfi.setSelected(false);
-        selectAngryEfi.setSelected(true);
-        characterPath = "./resources/images/angryEfi.png";
+        if (this.happyEfiSelect.isSelected())
+            this.happyEfiSelect.setSelected(false);
+        angryEfiSelect.setSelected(true);
+        characterPath = "./src/main/resources/images/angryEfi.png";
     }
 
 
@@ -67,8 +67,8 @@ public class SecondWindow extends AView{
         int numOfRows;
         int numOfCols;
         try {
-            numOfRows = Integer.parseInt(textFieldRow.getText());
-            numOfCols = Integer.parseInt(textFieldCol.getText());
+            numOfRows = Integer.parseInt(rowTextField.getText());
+            numOfCols = Integer.parseInt(colTextField.getText());
             if (numOfRows < 2 || numOfCols < 2)
             {
                 rowColInputError.setText("Please enter valid numbers and larger than 1!");
@@ -80,7 +80,7 @@ public class SecondWindow extends AView{
             return;
         }
 
-        if (this.textFieldRow.getText().equals("") || this.textFieldCol.getText().equals(""))
+        if (this.rowTextField.getText().equals("") || this.colTextField.getText().equals(""))
         {
             rowColInputError.setText("The fields of rows and columns must contain a value");
             return;
@@ -99,7 +99,7 @@ public class SecondWindow extends AView{
         Parent thirdRoot = FXMLLoader.load(getClass().getResource("/MyView.fxml"));
         Scene myViewScene = new Scene(thirdRoot, 1000, 800);
 
-        Stage primaryStage = (Stage) selectHappyEfi.getScene().getWindow();
+        Stage primaryStage = (Stage) happyEfiSelect.getScene().getWindow();
         primaryStage.setMaximized(false);
         primaryStage.setScene(myViewScene);
         primaryStage.setMaximized(true);
@@ -199,5 +199,7 @@ public class SecondWindow extends AView{
         }
 
     }
+
+
 
 }

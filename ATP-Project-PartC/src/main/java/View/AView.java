@@ -72,16 +72,16 @@ public abstract class AView implements IView, Initializable {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Properties");
         alert.setHeaderText("");
-        File file = new File("resources\\config.properties");
+        File file = new File("./src/main/resources/config.properties");
 
         InputStream inputStream = new FileInputStream(file);
         Properties prop =new Properties();
         prop.load(inputStream);
         inputStream.close();
 
-        String configurationsString = "\n\n\n\n\t\t" +     "Number of threads:             " + Configurations.getInstance().getThreadPoolSize() +
-                                                "\n\t\t" + "Maze Generate Algorithm:       " + Configurations.getInstance().getMazeGeneratingAlgorithm() +
-                                                "\n\t\t" + "Maze Searching Algorithm:      " + Configurations.getInstance().getMazeSearchingAlgorithm();
+        String configurationsString = "\n\n\t" +     "Number of threads:                   " + Configurations.getInstance().getThreadPoolSize() +
+                                                "\n\t" + "Maze Generate Algorithm:       " + Configurations.getInstance().getMazeGeneratingAlgorithm() +
+                                                "\n\t" + "Maze Searching Algorithm:      " + Configurations.getInstance().getMazeSearchingAlgorithm();
         Text text = new Text();
         text.setText(configurationsString);
         text.setFont(Font.font("Serif", FontWeight.EXTRA_BOLD, 40));

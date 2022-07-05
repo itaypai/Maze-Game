@@ -15,11 +15,12 @@ public class newGameSettingsView extends AView{
     public void newGameSettings(ActionEvent event) throws IOException
     {
         Stage primaryStage = (Stage)((Node) event.getSource()).getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/newGameSettingsView.fxml"));
-        Parent root = fxmlLoader.load();
-        Scene scene2 = new Scene(root, 1000, 800);
+        Parent root = FXMLLoader.load(getClass().getResource("/newGameSettingsView.fxml"));
+        //FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/newGameSettingsView.fxml"));
+        //Parent root = fxmlLoader.load();
+        Scene scene2 = new Scene(root, 700, 575);
         primaryStage.setScene(scene2);
-        primaryStage.setFullScreen(true);
+        //primaryStage.setFullScreen(true);
         primaryStage.show();
 
     }

@@ -19,9 +19,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/StartMazeWindow.fxml"));
-        Parent root = fxmlLoader.load();
-        //Parent root = FXMLLoader.load(getClass().getResource("/StartMazeWindow.fxml"));
+        //FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/StartMazeWindow.fxml"));
+        //Parent root = fxmlLoader.load();
+        Parent root = FXMLLoader.load(getClass().getResource("/StartMazeWindow.fxml"));
         primaryStage.setTitle("The Maze");
         primaryStage.setScene(new Scene(root, 1000, 800));
         primaryStage.show();
@@ -36,23 +36,23 @@ public class Main extends Application {
             MyViewController.myMazeMedia.setMute(true);
             Parent secondRoot = null;
             try {
-                //secondRoot = FXMLLoader.load(getClass().getResource("/newGameSettingsView.fxml"));
-                FXMLLoader fxmlLoader2 = new FXMLLoader(getClass().getResource("/newGameSettingsView.fxml"));
-                secondRoot = fxmlLoader2.load();
+                secondRoot = FXMLLoader.load(getClass().getResource("/newGameSettingsView.fxml"));
+                //FXMLLoader fxmlLoader2 = new FXMLLoader(getClass().getResource("/newGameSettingsView.fxml"));
+                //secondRoot = fxmlLoader2.load();
 
             } catch (IOException e) {
                 e.printStackTrace();
             }
 
-            Scene mySecondScene = new Scene(secondRoot, 1000, 800);
+            Scene mySecondScene = new Scene(secondRoot, 700, 575);
             primaryStage.setScene(mySecondScene);
             primaryStage.setTitle("The Maze");
             Screen screen = Screen.getPrimary();
-            Rectangle2D bounds = screen.getVisualBounds();
+            /*Rectangle2D bounds = screen.getVisualBounds();
             primaryStage.setX(bounds.getMinX());
             primaryStage.setY(bounds.getMinY());
             primaryStage.setWidth(bounds.getWidth());
-            primaryStage.setHeight(bounds.getHeight());
+            primaryStage.setHeight(bounds.getHeight());*/
             primaryStage.show();
         });
 

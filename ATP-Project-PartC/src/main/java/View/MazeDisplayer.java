@@ -26,6 +26,7 @@ public class MazeDisplayer extends Canvas{
     StringProperty imageFileNamePlayer = new SimpleStringProperty();
     StringProperty imageFileNameGoalPos = new SimpleStringProperty();
     StringProperty imageFileNameSolutionPath = new SimpleStringProperty();
+    private boolean isFinish = false;
     private int goalPosRow;
     private int goalPosCol;
 
@@ -48,6 +49,14 @@ public class MazeDisplayer extends Canvas{
     {
         this.solution = solution;
         this.draw();
+    }
+
+    public void setFinish(boolean bool)
+    {
+        this.isFinish = bool;
+        if (isFinish == true){
+            draw();
+        }
     }
 
     public String getImageFileNameWall() {
@@ -113,8 +122,8 @@ public class MazeDisplayer extends Canvas{
         catch (FileNotFoundException e) {
             System.out.println("There is no image of goal position");
         }
-        double xAxis = this.goalPosRow * cellWidth;
-        double yAxis = this.goalPosCol * cellHeight;
+        double xAxis = this.goalPosCol * cellWidth;
+        double yAxis = this.goalPosRow * cellHeight;
 
         graphicsContext.setFill(Color.YELLOWGREEN);
         if (!this.finish()){
@@ -161,9 +170,45 @@ public class MazeDisplayer extends Canvas{
         }
     }
 
-    private void drawMazeSolution(GraphicsContext graphicsContext, Queue<Integer[]> solutionPath)
-    {
+    public void drawMazeSolution(Queue<Integer[]> solutionPath) {
         double xAxis;
+        double yAxis;
+        Integer posFirstValue;
+        Integer posSecondValue;
+        double canvasHeight = getHeight();
+        double canvasWidth = getWidth() - 200;
+        int numOfRows = maze.length;
+        int numOfCols = maze[0].length;
+        double cellHeight = canvasHeight / numOfRows;
+        double cellWidth = canvasWidth / numOfCols;
+
+        GraphicsContext graphicsContext = getGraphicsContext2D();
+        Image solutionPathImage = null;
+        try {
+            solutionPathImage = new Image(new FileInputStream("./src/main/resources/images/dollar.png"));
+        } catch (FileNotFoundException e) {
+            System.out.println("There is no solution path image");
+        }
+
+        for (Integer[] position : solutionPath) {
+            posFirstValue = position[0];
+            posSecondValue = position[1];
+            if (this.playerRow == posFirstValue && this.playerCol == posSecondValue) {
+                continue;
+            } else {
+                xAxis = posFirstValue * cellWidth;
+                yAxis = posSecondValue * cellHeight;
+                graphicsContext.drawImage(solutionPathImage, xAxis, yAxis, cellWidth, cellHeight);
+            }
+        }
+
+        this.drawPlayerInMaze(graphicsContext, cellHeight, cellWidth);
+        this.drawMazeWalls(graphicsContext, cellHeight, cellWidth, numOfRows, numOfCols);
+        this.drawMazeGoalPosition(graphicsContext, cellHeight, cellWidth);
+    }
+
+
+        /*double xAxis;
         double yAxis;
         Integer posFirstValue;
         Integer posSecondValue;
@@ -174,6 +219,7 @@ public class MazeDisplayer extends Canvas{
         double cellHeight = canvasHeight / numOfRows;
         double cellWidth = canvasWidth / numOfCols;
 
+        GraphicsContext graphicsContext = getGraphicsContext2D();
         Image solutionPathImage = null;
         try{
             solutionPathImage = new Image(new FileInputStream(this.getImageFileNameSolutionPath()));
@@ -199,7 +245,7 @@ public class MazeDisplayer extends Canvas{
         this.drawPlayerInMaze(graphicsContext, cellHeight, cellWidth);
         this.drawMazeWalls(graphicsContext, cellHeight, cellWidth, numOfRows, numOfCols);
         this.drawMazeGoalPosition(graphicsContext, cellHeight, cellWidth);
-    }
+    */
 
     private void drawMazeWalls(GraphicsContext graphicsContext, double cellHeight, double cellWidth, int rows, int cols)
     {
@@ -233,6 +279,15 @@ public class MazeDisplayer extends Canvas{
                 }
             }
         }
+    }
+    public boolean legalMove(int row, int col){
+        if (row < 0 || col < 0 || row > maze.length - 1 || col > maze[0].length - 1)
+            return false;
+        int legalMove = maze[row][col];
+        if (legalMove == 0){
+            return true;
+        }
+        return false;
     }
 
     private void drawPlayerInMaze(GraphicsContext graphicsContext, double cellHeight, double cellWidth)

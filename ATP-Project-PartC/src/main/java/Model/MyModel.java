@@ -91,7 +91,7 @@ public class MyModel extends Observable implements IModel {
             int characterCol = this.maze.getStartPosition().getColumnIndex();
             this.setPlayerLocation(characterRow, characterCol);
             setChanged();
-            notifyObservers("The new requested maze created.");
+            notifyObservers("The new requested maze created");
             logFile.info("The new requested maze created.");
         }
         catch (Exception e){
@@ -115,7 +115,7 @@ public class MyModel extends Observable implements IModel {
             byte[] compressesMaze =  (byte[])fromServer.readObject();
             ByteArrayInputStream byteArrayIS = new ByteArrayInputStream(compressesMaze);
             InputStream inputStream = new MyDecompressorInputStream(byteArrayIS);
-            byte[] decompressedMaze = new byte[maze.toByteArray().length];
+            byte[] decompressedMaze = new byte[rows * columns + 12];
             inputStream.read(decompressedMaze);
 
             this.maze = new Maze(decompressedMaze);

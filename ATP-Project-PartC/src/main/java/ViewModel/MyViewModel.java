@@ -2,6 +2,7 @@ package ViewModel;
 
 import Model.IModel;
 import Model.MovementDirection;
+import View.MyViewController;
 import algorithms.search.AState;
 import algorithms.search.MazeState;
 import algorithms.search.Solution;
@@ -115,4 +116,7 @@ public class MyViewModel extends Observable implements Observer {
         model.stopServers();
     }
 
+    public void assignObserver(Observer observer) {
+        this.addObserver(observer);
+    }
 }
