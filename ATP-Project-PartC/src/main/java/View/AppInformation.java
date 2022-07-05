@@ -10,17 +10,17 @@ public class AppInformation {
                 "Bring the character to the ring at the end of the maze and make Efrat happy." +
                 "\n" + "\n" +
                 "To zoom in and zoom out, press the ctrl key on the keyboard and the mouse scroller" + "\n" + "at the same time and select the zoom you want." +
-                "\n" + "\n" +
+                "\n" + "\n" + "for moving the maze on the screen use ctrl plus arrow." + "\n" +
                 "Displacement of the character on the screen will be done using the existing keyboard arrows" +
                 "\n" +
                 "There is another option to move the character using the following number buttons:" + "\n" +
                 "Directions:                Diagonals:" + "\n" +
-                "2- down                    1- down left" + "\n" +
-                "4- left                    3- down right" + "\n" +
-                "6- right                   7- up left" + "\n" +
-                "8- up                      9- up right" +
+                "arrow down- down                    A- down left" + "\n" +
+                "arrow left- left                    S- down right" + "\n" +
+                "arrow right- right                  Q- up left" + "\n" +
+                "arrow up- up                        W- up right" +
                 "\n" + "\n" +
-                "If you do not know how to continue, you can click on the Help me button on the screen" + "\n" +
+                "If you do not know how to continue, you can click on the Solve Maze button on the screen" + "\n" +
                 "and the solution to the current maze will be displayed on the maze."
                 );
         alert.show();

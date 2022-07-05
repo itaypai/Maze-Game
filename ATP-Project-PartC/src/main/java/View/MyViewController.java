@@ -66,7 +66,7 @@ public class MyViewController extends AView implements IView, Initializable, Obs
     double prevYAxis = -1;
     private boolean ctrlKeyPressed = false;
     @FXML
-    AnchorPane MyMazeGameView;
+    BorderPane myMazeGameView;
 
 
     public void setViewModel(MyViewModel viewModel)
@@ -137,7 +137,7 @@ public class MyViewController extends AView implements IView, Initializable, Obs
         BackgroundImage backgroundImage = new BackgroundImage(backGroundImage, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, backgroundSize);
         Background background = new Background(backgroundImage);
 
-        MyMazeGameView.setBackground(background);
+        myMazeGameView.setBackground(background);
         this.startNewGame();
 
     }
@@ -243,7 +243,7 @@ public class MyViewController extends AView implements IView, Initializable, Obs
     {
         if (musicOnRadioButton.isSelected())
             musicOnRadioButton.setSelected(false);
-        musicOnRadioButton.setSelected(true);
+        musicOffRadioButton.setSelected(true);
         myMazeMedia.pause();
         mazeDisplayer.requestFocus();
     }
@@ -323,29 +323,71 @@ public class MyViewController extends AView implements IView, Initializable, Obs
         }
 
         this.viewModel.movePlayer(keyEvent);
-/*        *//*double scaleY = mazeDisplayer.getScaleY();
-        double scaleX = mazeDisplayer.getScaleX();
-        if(scaleY == 1 && scaleX == 1) {
-            mazeDisplayer.setTranslateY(0);
-            mazeDisplayer.setTranslateX(0);
-            return;*//*
-        }*/
-        switch (keyEvent.getCode()){
-            case UP -> {
-                viewModel.movePlayerToDirection(MovementDirection.UP);
+
+        if (keyEvent.isControlDown()){
+            if(mazeDisplayer.getScaleY()==1 && mazeDisplayer.getScaleX()==1) {
+                mazeDisplayer.setTranslateY(0);
+                mazeDisplayer.setTranslateX(0);
                 return;
             }
-            case DOWN -> {
-                viewModel.movePlayerToDirection(MovementDirection.DOWN);
-                return;
+            switch (keyEvent.getCode()){
+                case UP -> {
+                    if(mazeDisplayer.getHeight()>50){
+                        mazeDisplayer.setTranslateY(mazeDisplayer.getTranslateY()+20);
+
+                    }
+                }
+                case DOWN -> {
+                    if(true){
+                        mazeDisplayer.setTranslateY(mazeDisplayer.getTranslateY()-20);
+                    }
+                }
+                case LEFT -> {
+                    if(true){
+                        mazeDisplayer.setTranslateX(mazeDisplayer.getTranslateX()-20);
+                    }
+                }
+                case RIGHT -> {
+                    if(mazeDisplayer.getWidth()>200){
+                        mazeDisplayer.setTranslateX(mazeDisplayer.getTranslateX()+20);
+                    }
+                }
             }
-            case LEFT -> {
-                viewModel.movePlayerToDirection(MovementDirection.LEFT);
-                return;
-            }
-            case RIGHT -> {
-                viewModel.movePlayerToDirection(MovementDirection.RIGHT);
-                return;
+        }
+        else{
+            switch (keyEvent.getCode()){
+                case UP -> {
+                    viewModel.movePlayerToDirection(MovementDirection.UP);
+                    return;
+                }
+                case DOWN -> {
+                    viewModel.movePlayerToDirection(MovementDirection.DOWN);
+                    return;
+                }
+                case LEFT -> {
+                    viewModel.movePlayerToDirection(MovementDirection.LEFT);
+                    return;
+                }
+                case RIGHT -> {
+                    viewModel.movePlayerToDirection(MovementDirection.RIGHT);
+                    return;
+                }
+                case Q -> {
+                    viewModel.movePlayerToDirection(MovementDirection.UPLEFT);
+                    return;
+                }
+                case W -> {
+                    viewModel.movePlayerToDirection(MovementDirection.UPRIGHT);
+                    return;
+                }
+                case A -> {
+                    viewModel.movePlayerToDirection(MovementDirection.DOWNLEFT);
+                    return;
+                }
+                case S -> {
+                    viewModel.movePlayerToDirection(MovementDirection.DOWNRIGHT);
+                    return;
+                }
             }
         }
         keyEvent.consume();

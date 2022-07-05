@@ -4,24 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f6f59c3-f8f6-4284-931f-56f0213c9735" name="Changes" comment="newGameSettingsView.fxml, SecondWindow">
+    <list default="true" id="0f6f59c3-f8f6-4284-931f-56f0213c9735" name="Changes" comment="mazeGameView.css, secondWindowBackground&#10;final version">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/MyModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/MyModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/AView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/AView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/View/AppInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/AppInformation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/View/MazeDisplayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/MazeDisplayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/View/MyViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/MyViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/SecondWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/SecondWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/newGameSettingsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/newGameSettingsView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ViewModel/MyViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewModel/MyViewModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/MyView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/MyView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/mazeViewBackgroind.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/mazeViewBackground.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/newGameSettingsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/newGameSettingsView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/MyView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MyView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/MazeDisplayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/MazeDisplayer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/mazeViewBackgroind.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/newGameSettingsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/newGameSettingsView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656900317023</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="mazeGameView.css, secondWindowBackground&#10;final version">
+      <created>1656987043270</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1656987043270</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -194,7 +190,8 @@
     <MESSAGE value="MyModel" />
     <MESSAGE value="AView" />
     <MESSAGE value="newGameSettingsView.fxml, SecondWindow" />
-    <option name="LAST_COMMIT_MESSAGE" value="newGameSettingsView.fxml, SecondWindow" />
+    <MESSAGE value="mazeGameView.css, secondWindowBackground&#10;final version" />
+    <option name="LAST_COMMIT_MESSAGE" value="mazeGameView.css, secondWindowBackground&#10;final version" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -208,11 +205,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/View/newGameSettingsView.java</url>
           <line>18</line>
           <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/View/MyViewController.java</url>
-          <line>243</line>
-          <option name="timeStamp" value="32" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

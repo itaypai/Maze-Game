@@ -139,67 +139,69 @@
 </AnchorPane>-->
 
 
-<AnchorPane fx:id="MyMazeGameView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseMoved="#closeRequestsToServers" prefHeight="521.0" prefWidth="768.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MyViewController">
-   <children>
-      <Button fx:id="solveMazeButton" layoutX="15.0" layoutY="457.0" mnemonicParsing="false" onAction="#solveMaze" prefHeight="42.0" prefWidth="112.0" text="Solve Maze" textFill="#171718">
-         <font>
-            <Font name="System Bold" size="16.0" />
-         </font>
-      </Button>
-      <RadioButton fx:id="musicOnRadioButton" layoutX="674.0" layoutY="16.0" mnemonicParsing="false" onAction="#selectionMusicOn" selected="true" text="music on">
-         <font>
-            <Font name="System Bold Italic" size="12.0" />
-         </font>
-      </RadioButton>
-      <RadioButton fx:id="musicOffRadioButton" layoutX="674.0" layoutY="43.0" mnemonicParsing="false" onAction="#selectionMusicOff" text="music off">
-         <font>
-            <Font name="System Bold Italic" size="12.0" />
-         </font>
-      </RadioButton>
-      <MenuBar fx:id="gameMenuBar" prefHeight="26.0" prefWidth="244.0">
-        <menus>
-            <Menu fx:id="fileMenu" mnemonicParsing="false" text="File">
-                <items>
-                    <MenuItem fx:id="newItem" mnemonicParsing="false" onAction="#startNewGame" text="New" />
-                    <MenuItem fx:id="loadItem" mnemonicParsing="false" onAction="#loadMaze" text="Load" />
-                    <MenuItem fx:id="saveItem" mnemonicParsing="false" onAction="#saveMaze" text="Save" />
-                </items>
-            </Menu>
-            <Menu fx:id="optionsMenu" mnemonicParsing="false" text="Options">
-                <items>
-                    <MenuItem fx:id="propertiesItem" mnemonicParsing="false" onAction="#showConfigurations" text="Properties" />
-                </items>
-            </Menu>
-            <Menu fx:id="helpMenu" mnemonicParsing="false" text="Help">
-                <items>
-                    <MenuItem fx:id="instructionsItem" mnemonicParsing="false" onAction="#instructionsMenu" text="Instructions" />
-                </items>
-            </Menu>
-            <Menu fx:id="aboutMenu" mnemonicParsing="false" text="About">
-                <items>
-                    <MenuItem fx:id="aboutMeItem" mnemonicParsing="false" onAction="#aboutMeMenu" text="Me" />
-                    <MenuItem fx:id="aboutStoryItem" mnemonicParsing="false" onAction="#storyBehindMenu" text="The Story" />
-                    <MenuItem fx:id="aboutAlgotirhmsItem" mnemonicParsing="false" onAction="#aboutAlgorithmsMenu" text="Algorithms" />
-                </items>
-            </Menu>
-            <Menu fx:id="exitMenu" mnemonicParsing="false" text="Exit">
-                <items>
-                    <MenuItem fx:id="exitItem" mnemonicParsing="false" onAction="#exitGame" text="Exit Game" />
-                    <MenuItem fx:id="backItem" mnemonicParsing="false" onAction="#backToSettingsWindow" text="Back" />
-                </items>
-            </Menu>
-        </menus>
-      </MenuBar>
-   </children>
-    <children>
+<BorderPane fx:id="myMazeGameView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" onMouseMoved="#closeRequestsToServers" fx:controller="View.MyViewController" >
+    <top>
+        <MenuBar fx:id="gameMenuBar" prefHeight="26.0" prefWidth="244.0">
+            <menus>
+                <Menu fx:id="fileMenu" mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem fx:id="newItem" mnemonicParsing="false" onAction="#startNewGame" text="New" />
+                        <MenuItem fx:id="loadItem" mnemonicParsing="false" onAction="#loadMaze" text="Load" />
+                        <MenuItem fx:id="saveItem" mnemonicParsing="false" onAction="#saveMaze" text="Save" />
+                    </items>
+                </Menu>
+                <Menu fx:id="optionsMenu" mnemonicParsing="false" text="Options">
+                    <items>
+                        <MenuItem fx:id="propertiesItem" mnemonicParsing="false" onAction="#showConfigurations" text="Properties" />
+                    </items>
+                </Menu>
+                <Menu fx:id="helpMenu" mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem fx:id="instructionsItem" mnemonicParsing="false" onAction="#instructionsMenu" text="Instructions" />
+                    </items>
+                </Menu>
+                <Menu fx:id="aboutMenu" mnemonicParsing="false" text="About">
+                    <items>
+                        <MenuItem fx:id="aboutMeItem" mnemonicParsing="false" onAction="#aboutMeMenu" text="Me" />
+                        <MenuItem fx:id="aboutStoryItem" mnemonicParsing="false" onAction="#storyBehindMenu" text="The Story" />
+                        <MenuItem fx:id="aboutAlgotirhmsItem" mnemonicParsing="false" onAction="#aboutAlgorithmsMenu" text="Algorithms" />
+                    </items>
+                </Menu>
+                <Menu fx:id="exitMenu" mnemonicParsing="false" text="Exit">
+                    <items>
+                        <MenuItem fx:id="exitItem" mnemonicParsing="false" onAction="#exitGame" text="Exit Game" />
+                        <MenuItem fx:id="backItem" mnemonicParsing="false" onAction="#backToSettingsWindow" text="Back" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+    <center>
         <ScrollPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" prefHeight="600.0" prefWidth="800.0" BorderPane.alignment="CENTER" stylesheets="mazeGameView.css">
             <content>
                 <BorderPane prefHeight="600.0" prefWidth="800.0" stylesheets="mazeGameView.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" >
                     <center>
-                        <MazeDisplayer layoutX="Infinity" layoutY="Infinity" fx:id="mazeDisplayer" height="600.0" width="800.0" onMouseClicked="#clickOnMaze" onKeyPressed="#keyPressed" onKeyReleased="#releaseCtrlKey" onMouseEntered="#mouseToHand" onMouseExited="#turnsMouseArrow" focusTraversable="true" BorderPane.alignment="CENTER" onScroll="#zoomInOut" onMouseDragged="#DragMouse" />
+                        <MazeDisplayer layoutX="Infinity" layoutY="Infinity" fx:id="mazeDisplayer" height="600.0" width="800.0" onMouseClicked="#clickOnMaze" onMouseMoved="#moveMaze" onKeyPressed="#keyPressed" onKeyReleased="#releaseCtrlKey" onMouseEntered="#mouseToHand" onMouseExited="#turnsMouseArrow" focusTraversable="true" BorderPane.alignment="CENTER" onScroll="#zoomInOut" onMouseDragged="#DragMouse" />
                     </center>
+                    <left>
+                        <AnchorPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" prefHeight="100.0" prefWidth="100.0" BorderPane.alignment="TOP_LEFT">
+                            <children>
+                                <Button fx:id="solveMazeButton" layoutX="100.0" layoutY="50.0" mnemonicParsing="false" onAction="#solveMaze" prefHeight="39.0" prefWidth="86.0" text="Solve Maze" BorderPane.alignment="BOTTOM_CENTER"/>
+                                <RadioButton fx:id="musicOnRadioButton" layoutX="100.0" layoutY="100.0" mnemonicParsing="false" onAction="#selectionMusicOn" selected="true" text="music on">
+                                    <font>
+                                        <Font name="System Bold Italic" size="12.0" />
+                                    </font>
+                                </RadioButton>
+                                <RadioButton fx:id="musicOffRadioButton" layoutX="100.0" layoutY="127.0" mnemonicParsing="false" onAction="#selectionMusicOff" text="music off">
+                                    <font>
+                                        <Font name="System Bold Italic" size="12.0" />
+                                    </font>
+                                </RadioButton>
+                            </children>
+                        </AnchorPane>
+                    </left>
                 </BorderPane>
             </content>
         </ScrollPane>
-    </children>
-</AnchorPane>
+    </center>
+</BorderPane>

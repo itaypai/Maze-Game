@@ -122,7 +122,7 @@ public class MazeDisplayer extends Canvas{
         catch (FileNotFoundException e) {
             System.out.println("There is no image of goal position");
         }
-        double xAxis = this.goalPosCol * cellWidth;
+        double xAxis = this.goalPosCol * cellWidth+100;
         double yAxis = this.goalPosRow * cellHeight;
 
         graphicsContext.setFill(Color.YELLOWGREEN);
@@ -153,7 +153,7 @@ public class MazeDisplayer extends Canvas{
         if(maze != null)
         {
             double canvasHeight = getHeight();
-            double canvasWidth = getWidth();
+            double canvasWidth = getWidth() - 200;
             int rows = maze.length;
             int cols = maze[0].length;
 
@@ -162,7 +162,7 @@ public class MazeDisplayer extends Canvas{
 
             GraphicsContext graphicsContext = getGraphicsContext2D();
             //clear the canvas:
-            graphicsContext.clearRect(0, 0, canvasWidth, canvasHeight);
+            graphicsContext.clearRect(0, 0, canvasWidth + 100, canvasHeight);
 
             drawMazeWalls(graphicsContext, cellHeight, cellWidth, rows, cols);
             drawMazeGoalPosition(graphicsContext, cellHeight, cellWidth);
@@ -170,9 +170,8 @@ public class MazeDisplayer extends Canvas{
         }
     }
 
-    public void drawMazeSolution(Queue<Integer[]> solutionPath) {
-        double xAxis;
-        double yAxis;
+    public void drawMazeSolution(Queue<Integer[]> solutionPath)
+    {
         Integer posFirstValue;
         Integer posSecondValue;
         double canvasHeight = getHeight();
@@ -183,6 +182,7 @@ public class MazeDisplayer extends Canvas{
         double cellWidth = canvasWidth / numOfCols;
 
         GraphicsContext graphicsContext = getGraphicsContext2D();
+        graphicsContext.clearRect(0, 0, canvasWidth, canvasHeight);
         Image solutionPathImage = null;
         try {
             solutionPathImage = new Image(new FileInputStream("./src/main/resources/images/dollar.png"));
@@ -190,16 +190,17 @@ public class MazeDisplayer extends Canvas{
             System.out.println("There is no solution path image");
         }
 
-        for (Integer[] position : solutionPath) {
+        for(Integer[] position: solutionPath){
             posFirstValue = position[0];
             posSecondValue = position[1];
-            if (this.playerRow == posFirstValue && this.playerCol == posSecondValue) {
+            if(posFirstValue == playerRow && posSecondValue == playerCol){
                 continue;
-            } else {
-                xAxis = posFirstValue * cellWidth;
-                yAxis = posSecondValue * cellHeight;
-                graphicsContext.drawImage(solutionPathImage, xAxis, yAxis, cellWidth, cellHeight);
             }
+            double xAxis = posSecondValue * cellWidth+100;
+            double yAxis = posFirstValue * cellHeight;
+            graphicsContext.clearRect(xAxis,yAxis,cellWidth,cellHeight);
+            graphicsContext.drawImage(solutionPathImage, xAxis, yAxis, cellWidth, cellHeight);
+
         }
 
         this.drawPlayerInMaze(graphicsContext, cellHeight, cellWidth);
@@ -267,7 +268,7 @@ public class MazeDisplayer extends Canvas{
                 //If the cell is equal to 1 the cell should be a wall
                 if (this.maze[i][j] == 1)
                 {
-                    xAxis = j * cellWidth;
+                    xAxis = j * cellWidth+100;
                     yAxis = i * cellHeight;
 
                     if (mazeWallImage == null){
@@ -293,7 +294,7 @@ public class MazeDisplayer extends Canvas{
     private void drawPlayerInMaze(GraphicsContext graphicsContext, double cellHeight, double cellWidth)
     {
         Image playerImage = null;
-        double xAxis = getPlayerCol() * cellWidth;
+        double xAxis = getPlayerCol() * cellWidth+100;
         double yAxis = getPlayerRow() * cellHeight;
         graphicsContext.setFill(Color.GREEN);
 
